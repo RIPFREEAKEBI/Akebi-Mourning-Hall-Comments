@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Akebi奇妙灵堂</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/cachep2p.min.js"></script>
+    <script type="text/javascript" src="js/py.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <link href="css/b.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="ld();">
+    <div id="all">
+        <div class="diantext">奠</div>
+        <div id="dian">
+            <span id="diantx">可能会倒闭 但不会变质</span>
+        </div>
+        <div id="sbframe">
+            <img id="sb" src="img/sb.png" style="filter: saturate(0); transform: scale(1);" />
+            <img class="lns" id="isa" src="img/a.gif" style="margin-top: -55px;" />
+            <img class="lns" id="isb" src="img/b.gif" style="margin-left: 150px;" />
+            <img class="lns" id="isc" src="img/c.gif" style="margin-left: 175px;" />
+            <img class="lns" id="isd" src="img/d.gif" style="margin-left: 145px;margin-top: -40px;" />
+            <img class="lns" id="ise" src="img/e.png"
+                style="margin-left: 87px; margin-top: -200px; opacity: 0; transform: scale(0.3);animation :rot 0.7s linear infinite;" />
+            <img class="lns" id="isf" src="img/f.gif"
+                style="margin-left: 125px;opacity: 1;margin-top: -125px;z-index: 8;transform: scale(0.6);" />
+            <img class="lns" id="isg" src="img/g.gif"
+                style="margin-left: -100px;opacity: 1;margin-top: -173px;z-index: 8;transform: scale(0.5);" />
+            <img class="lns" id="ish" src="img/h.gif"
+                style="margin-left: 310px;opacity: 1;margin-top: -50px;z-index: 8;" />
+            <img class="lns" id="isi" src="img/i.gif"
+                style="margin-left: 113px;opacity: 1;margin-top: -145px;z-index: 8;transform: scale(0.8);" />
+        </div>
+        <style>
+            @keyframes rot {
+                0% {
+                    transform: scale(0.3) rotateZ(0deg)
+                }
+
+                100% {
+                    transform: scale(0.3) rotateZ(360deg)
+                }
+            }
+
+            @keyframes stop {
+                0% {
+                    transform: scale(0.3)
+                }
+
+                100% {
+                    transform: scale(0.3)
+                }
+            }
+        </style>
+        <div id="leftyx">
+            <div class="lb"></div>
+            <div class="lb"></div>
+            <div class="light"></div>
+        </div>
+        <div id="rightyx">
+            <div class="lb"></div>
+            <div class="lb"></div>
+            <div class="light"></div>
+        </div>
+        <div id="btmper">
+            <audio src="music/lol.mp3" id="playera" controls loop></audio>
+            <div id="wd">
+                <p class="tx">低音</p><input type="range" id="low" min="1" max="30" value="1" />
+                <p class="tx">高音</p><input type="range" id="high" min="1" max="30" value="1" />
+                <p class="tx">Akebi灵堂蹦迪</p><a href="javascript:;" class="file">选丧歌<input type="file" name="file"
+                        id="file" onchange="onInputFileChange(); cx.resume();"></a>
+            </div>
+            <span class="lastx">Based on Esu!™ Media Player Alpha V0.6, Modified By WhkSoft</span>
+            <span class="lastx" style="color: #d5ff00;text-shadow: 0px 0px 1px;">请等待加载完成(龙图不动)再点击播放
+                (仅Chormium内核浏览器可正常浏览)</span>
+            <span class="lastx" style="color: #d5ff00;text-shadow: 0px 0px 1px;">若无法正常调整高低音，请自行在控制台输入ld();</span>
+            <span class="lastx" style="color: #d5ff00;text-shadow: 0px 0px 1px;">BGM: 中原龙太郎-中华急行</span>
+            <span class="lastx" style="color: #d5ff00;text-shadow: 0px 0px 1px;">English Version Coming soon!</span>
+                <div id="gitalk-container"></div>
+        </div>
+        
+    </div>
+    </div>
+
+
+    <script>
+        
+        var gitalk = new Gitalk({
+            clientID: 'clientID',
+            clientSecret: 'Secret',
+            repo: 'repo',
+            owner: 'owner',
+            admin: ['admin'],
+            id: location.pathname,      // Ensure uniqueness and length less than 50
+            distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</body>
+    <script>
+    
+    window.onload = function(){
+        cx.resume();
+        
+        
+        setTimeout(function(){ld();}, 2000);
+    }
+    
+    
+    </script>
+</html>
